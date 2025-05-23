@@ -29,7 +29,6 @@ public class IssueTabTest {
     @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Проверка на чистом Selenide")
     void selenideIssueTest() {
-
         open(baseUrl);
         $("[aria-label='Search or jump to…']").click();
         $("#query-builder-test").setValue(REPOSITORY).pressEnter();
