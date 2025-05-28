@@ -3,12 +3,12 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -17,8 +17,12 @@ public class IssueTabTest {
     private static final String REPOSITORY = "qa_guru_14_10";
 
     @BeforeAll
-    static void beforeTests() {
+    static void setupConfig() {
         Configuration.baseUrl = "https://github.com";
+    }
+
+    @BeforeEach
+    void addLog(){
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
