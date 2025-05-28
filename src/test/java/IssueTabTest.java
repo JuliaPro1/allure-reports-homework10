@@ -22,7 +22,7 @@ public class IssueTabTest {
     }
 
     @BeforeEach
-    void addLog(){
+    void addLog() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
